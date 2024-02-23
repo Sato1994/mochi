@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  api:
+    container_name: api
+    build: .
+    volumes:
+      - .:/mochi
+    ports:
+      - "3000:1323"
+    tty: true
+    stdin_open: true
+
+
+# docker-compose exec api bash 
