@@ -10,11 +10,8 @@ func main() {
 
 	e := echo.New()
 	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "sld!c")
+		return c.String(http.StatusOK, "get request...")
 	})
-
-	
-
 
 	// e.POST("/users", saveUser)
 	e.GET("/users/:id", getUser)
