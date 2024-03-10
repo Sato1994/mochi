@@ -9,6 +9,19 @@ services:
       - "3000:1323"
     tty: true
     stdin_open: true
-
-
-# docker-compose exec api bash 
+  db:
+    container_name: db
+    image: mysql:8.3.0
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: db
+      MYSQL_USER: mochi
+      MYSQL_PASSWORD: password
+      TZ: "Asia/Tokyo"
+    volumes:
+      - db-data:/var/lib/mysql/
+    
+volumes:
+  db-data:
